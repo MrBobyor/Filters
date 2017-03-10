@@ -40,6 +40,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.размытиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.фильтрГауссаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +98,8 @@
             // матричныеToolStripMenuItem
             // 
             this.матричныеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.размытиеToolStripMenuItem});
+            this.размытиеToolStripMenuItem,
+            this.фильтрГауссаToolStripMenuItem});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -143,6 +145,13 @@
             this.размытиеToolStripMenuItem.Text = "Размытие";
             this.размытиеToolStripMenuItem.Click += new System.EventHandler(this.размытиеToolStripMenuItem_Click);
             // 
+            // фильтрГауссаToolStripMenuItem
+            // 
+            this.фильтрГауссаToolStripMenuItem.Name = "фильтрГауссаToolStripMenuItem";
+            this.фильтрГауссаToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.фильтрГауссаToolStripMenuItem.Text = "Фильтр Гаусса";
+            this.фильтрГауссаToolStripMenuItem.Click += new System.EventHandler(this.фильтрГауссаToolStripMenuItem_Click);
+            // 
             // Filters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +186,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem размытиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem фильтрГауссаToolStripMenuItem;
     }
 }
 

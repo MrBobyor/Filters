@@ -68,5 +68,11 @@ namespace Filters
             Filter filter = new BlurFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void фильтрГауссаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GaussianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
