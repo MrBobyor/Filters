@@ -28,7 +28,7 @@ namespace Filters
             return resultImage;
         }
 
-        public int Clanmp(int value, int min, int max)
+        public int Clamp(int value, int min, int max)
         {
             if (value < min)
                 return min;

@@ -62,5 +62,11 @@ namespace Filters
         {
             backgroundWorker1.CancelAsync();
         }
+
+        private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new BlurFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
