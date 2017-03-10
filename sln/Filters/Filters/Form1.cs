@@ -74,5 +74,11 @@ namespace Filters
             Filter filter = new GaussianFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void черныйбелыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GrayScaleFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
