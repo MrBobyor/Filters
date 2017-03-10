@@ -56,10 +56,12 @@
     </Compile>
     <Compile Include="GaussianFilter.cs" />
     <Compile Include="GrayScaleFilter.cs" />
+    <Compile Include="IntensFilter.cs" />
     <Compile Include="InvertFilter.cs" />
     <Compile Include="MatrixFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SepiaFilter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
