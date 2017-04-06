@@ -14,14 +14,14 @@ namespace Filters
     {
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
-            float k = 2.0f;
+            float k = 10;
             Color sourceColor = sourceImage.GetPixel(x, y);
 
-            byte intensity = (byte)(0.36f * sourceColor.R + 0.53f * sourceColor.G + 0.11f * sourceColor.B);
-            byte clrR = (byte)(intensity + 2.0f * k);
-            byte clrG = (byte)(intensity + 0.5f * k);
-            byte clrB = (byte)(intensity - 1.0f * k);
-            Color resultColor = Color.FromArgb(Clamp(clrR, 0, 255), Clamp(clrG, 0, 255), Clamp(clrB, 0, 255));
+            float intensity = 0.36f * sourceColor.R + 0.53f * sourceColor.G + 0.11f * sourceColor.B;
+            float clrR = intensity + 2.0f * k;
+            float clrG = intensity + 0.5f * k;
+            float clrB = intensity - 1.0f * k;
+            Color resultColor = Color.FromArgb(Clamp((int)clrR, 0, 255), Clamp((int)clrG, 0, 255), Clamp((int)clrB, 0, 255));
             return resultColor;
         }
     }

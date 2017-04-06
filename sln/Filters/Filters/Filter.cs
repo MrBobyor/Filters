@@ -10,6 +10,7 @@ using System.ComponentModel;
 
 namespace Filters
 {
+
     abstract class Filter
     {
         protected abstract Color calculateNewPixelColor(Bitmap sourceImage, int x, int y);

@@ -13,6 +13,7 @@ namespace Filters
     public partial class Filters : Form
     {
         Bitmap image;
+        Stack<Bitmap> oldMap;
 
         public Filters()
         {
@@ -36,14 +37,19 @@ namespace Filters
         {
             InvertFilter filter = new InvertFilter();
             backgroundWorker1.RunWorkerAsync(filter);
-            /*backgroundWorker1*Bitmap resultImage = filter.processImage(image, backgroundWorker1);
+            /*Bitmap resultImage = filter.processImage(image, backgroundWorker1);
             pictureBox1.Image = resultImage;
             pictureBox1.Refresh();*/
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            image = ((Filter)e.Argument).processImage(image, backgroundWorker1);
+            Bitmap Newimage = ((Filter)e.Argument).processImage(image, backgroundWorker1);
+            //if (backgroundWorker1.CancellationPending != true)
+            //{
+              //oldMap.Push(image);
+                image = Newimage;
+            //}
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -65,6 +71,8 @@ namespace Filters
 
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Filter filter1 = new BlurFilter();
+            Filter filter2 = new BlurFilter();
             Filter filter = new BlurFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
@@ -92,5 +100,54 @@ namespace Filters
             Filter filter = new IntensFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new SobelFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void стеклоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Glass();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void волныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Wave();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Sharp();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void отменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (oldMap.Count != 0)
+            {
+                pictureBox1.Image = oldMap.Peek();
+                image = oldMap.Pop();
+            }
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            save.Title = "Сохранить изображение";
+            save.ShowDialog();
+
+            if (save.FileName != "")
+            {
+                System.IO.FileStream fileStream = (System.IO.FileStream)save.OpenFile();
+                this.pictureBox1.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                fileStream.Close();
+            }
+        }
+
     }
 }
