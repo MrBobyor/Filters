@@ -17,6 +17,7 @@ namespace Filters
 
         public Filters()
         {
+            oldMap = new Stack<Bitmap>();
             InitializeComponent();
         }
 
@@ -47,7 +48,7 @@ namespace Filters
             Bitmap Newimage = ((Filter)e.Argument).processImage(image, backgroundWorker1);
             //if (backgroundWorker1.CancellationPending != true)
             //{
-              //oldMap.Push(image);
+                oldMap.Push(image);
                 image = Newimage;
             //}
         }
@@ -71,8 +72,6 @@ namespace Filters
 
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter1 = new BlurFilter();
-            Filter filter2 = new BlurFilter();
             Filter filter = new BlurFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
