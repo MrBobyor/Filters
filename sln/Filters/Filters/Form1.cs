@@ -81,6 +81,12 @@ namespace Filters
             Filter filter = new Wave();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+       
+        private void серыйМирToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GrayWorld(image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
 
         //matrix filters
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,6 +202,7 @@ namespace Filters
             pictureBox1.Image = result;
             pictureBox1.Refresh();
         }
+
 
     }
 }

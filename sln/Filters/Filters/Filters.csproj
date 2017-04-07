@@ -59,6 +59,7 @@
     <Compile Include="GaussianFilter.cs" />
     <Compile Include="Glass.cs" />
     <Compile Include="GrayScaleFilter.cs" />
+    <Compile Include="GrayWorld.cs" />
     <Compile Include="IntensFilter.cs" />
     <Compile Include="InvertFilter.cs" />
     <Compile Include="MatMorphology.cs" />
