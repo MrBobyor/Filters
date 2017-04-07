@@ -55,6 +55,7 @@
             this.расширениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.замыканиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.размыканиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.медианныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -165,9 +166,10 @@
             this.размытиеToolStripMenuItem,
             this.фильтрГауссаToolStripMenuItem,
             this.фильтрСобеляToolStripMenuItem,
-            this.резкостьToolStripMenuItem});
+            this.резкостьToolStripMenuItem,
+            this.медианныйToolStripMenuItem});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
-            this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
             // 
             // размытиеToolStripMenuItem
@@ -278,6 +280,13 @@
             this.размыканиеToolStripMenuItem.Text = "Размыкание";
             this.размыканиеToolStripMenuItem.Click += new System.EventHandler(this.размыканиеToolStripMenuItem_Click);
             // 
+            // медианныйToolStripMenuItem
+            // 
+            this.медианныйToolStripMenuItem.Name = "медианныйToolStripMenuItem";
+            this.медианныйToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.медианныйToolStripMenuItem.Text = "Медианный";
+            this.медианныйToolStripMenuItem.Click += new System.EventHandler(this.медианныйToolStripMenuItem_Click);
+            // 
             // Filters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem расширениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem замыканиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem размыканиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem медианныйToolStripMenuItem;
     }
 }
 
