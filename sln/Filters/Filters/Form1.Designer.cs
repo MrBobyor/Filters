@@ -57,6 +57,7 @@
             this.размыканиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.медианныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.серыйМирToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.линейнойРастяжениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,8 @@
             this.яркостьToolStripMenuItem,
             this.стеклоToolStripMenuItem,
             this.волныToolStripMenuItem,
-            this.серыйМирToolStripMenuItem1});
+            this.серыйМирToolStripMenuItem1,
+            this.линейнойРастяжениеToolStripMenuItem});
             this.точечныеToolStripMenuItem.Name = "точечныеToolStripMenuItem";
             this.точечныеToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.точечныеToolStripMenuItem.Text = "Точечные";
@@ -213,7 +215,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(368, 339);
+            this.pictureBox1.Size = new System.Drawing.Size(667, 339);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -296,6 +298,13 @@
             this.серыйМирToolStripMenuItem1.Text = "Серый мир";
             this.серыйМирToolStripMenuItem1.Click += new System.EventHandler(this.серыйМирToolStripMenuItem1_Click);
             // 
+            // линейнойРастяжениеToolStripMenuItem
+            // 
+            this.линейнойРастяжениеToolStripMenuItem.Name = "линейнойРастяжениеToolStripMenuItem";
+            this.линейнойРастяжениеToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.линейнойРастяжениеToolStripMenuItem.Text = "Линейной растяжение";
+            this.линейнойРастяжениеToolStripMenuItem.Click += new System.EventHandler(this.линейнойРастяжениеToolStripMenuItem_Click);
+            // 
             // Filters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +356,7 @@
         private System.Windows.Forms.ToolStripMenuItem размыканиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem медианныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem серыйМирToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem линейнойРастяжениеToolStripMenuItem;
     }
 }
 

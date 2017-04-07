@@ -88,6 +88,12 @@ namespace Filters
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
+        private void линейнойРастяжениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new LinearStretching(image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
         //matrix filters
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {

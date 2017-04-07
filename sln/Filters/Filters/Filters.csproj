@@ -62,6 +62,7 @@
     <Compile Include="GrayWorld.cs" />
     <Compile Include="IntensFilter.cs" />
     <Compile Include="InvertFilter.cs" />
+    <Compile Include="LinearStretching.cs" />
     <Compile Include="MatMorphology.cs" />
     <Compile Include="MatrixFilter.cs" />
     <Compile Include="MedianFilter.cs" />
