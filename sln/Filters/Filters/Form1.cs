@@ -45,12 +45,12 @@ namespace Filters
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Bitmap Newimage = ((Filter)e.Argument).processImage(image, backgroundWorker1);
-            //if (backgroundWorker1.CancellationPending != true)
-            //{
+            Bitmap newImage = ((Filter)e.Argument).processImage(image, backgroundWorker1);
+            if (backgroundWorker1.CancellationPending != true)
+            {
                 oldMap.Push(image);
-                image = Newimage;
-            //}
+                image = newImage;
+            }
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -146,6 +146,34 @@ namespace Filters
                 this.pictureBox1.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 fileStream.Close();
             }
+        }
+
+        private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new ErosionMask();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new DilationMask();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void замыканиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter1 = new DilationMask();
+            Filter filter2 = new ErosionMask();
+            Bitmap resultImage = filter1.processImage(image);
+            backgroundWorker1.RunWorkerAsync(filter2);
+        }
+
+        private void размыканиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter1 = new ErosionMask();
+            Filter filter2 = new DilationMask();
+            Bitmap resultImage = filter1.processImage(image);
+            backgroundWorker1.RunWorkerAsync(filter2);
         }
 
     }

@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlurFilter.cs" />
+    <Compile Include="DilationFilter.cs" />
+    <Compile Include="ErosionFilter.cs" />
     <Compile Include="Erossion.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="Form1.cs">
@@ -60,6 +62,7 @@
     <Compile Include="GrayScaleFilter.cs" />
     <Compile Include="IntensFilter.cs" />
     <Compile Include="InvertFilter.cs" />
+    <Compile Include="MatMorphology.cs" />
     <Compile Include="MatrixFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
