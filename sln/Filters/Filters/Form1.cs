@@ -169,18 +169,44 @@ namespace Filters
         }
 
         //mat morfology
-        private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
+        private void стандартныйЭлементToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new ErosionMask();
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
+        private void стандартныйЭлементToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Filter filter = new DilationMask();
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
+        private void задатьСвойЭлементToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            form.ShowDialog();
+            int[,] mask = new int[3, 3];
+            mask = Form3.mask;
+            if (Form3.marker)
+            {
+                Filter filter = new ErosionFilter(mask);
+                backgroundWorker1.RunWorkerAsync(filter);
+            }
+        }
+
+        private void задатьСвойЭлементToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            form.ShowDialog();
+            int[,] mask = new int[3, 3];
+            mask = Form3.mask;
+            if (Form3.marker)
+            {
+                Filter filter = new DilationFilter(mask);
+                backgroundWorker1.RunWorkerAsync(filter);
+            }
+        }
+       
         private void замыканиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter1 = new DilationMask();
@@ -208,7 +234,5 @@ namespace Filters
             pictureBox1.Image = result;
             pictureBox1.Refresh();
         }
-
-
     }
 }

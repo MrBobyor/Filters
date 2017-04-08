@@ -7,6 +7,13 @@ namespace Filters
 {
     class ErosionFilter : MatMorphology
     {
+        protected ErosionFilter() { }
+
+        public ErosionFilter(int[,] mask)
+        {
+            this.mask = mask;
+        }
+
         protected override void ind_mask()
         {
             ind_m = 0;
@@ -20,11 +27,6 @@ namespace Filters
                 return true;
             }
             return false;
-        }
-
-        public void ErossionFilter(int[,] mask)
-        {
-            this.mask = mask;
         }
     }
 

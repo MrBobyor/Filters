@@ -15,8 +15,9 @@ namespace Filters
             int radiusX = kerX / 2;
             int radiusY = kerY / 2;
 
-            List<double> valColor = new List<double>();
-            Dictionary<double, Color> map = new Dictionary<double, Color>();
+            List<double> valIntens = new List<double>();
+            Color color = sourceImage.GetPixel(x, y);
+           // Color[,] map = new Color[kerX, kerY];
             double median;
 
             for(int i = -radiusX; i <= radiusX; i++)
@@ -26,15 +27,25 @@ namespace Filters
                     int idY = Clamp(y + j, 0, sourceImage.Height - 1);
                     Color radiusColor = sourceImage.GetPixel(idX, idY);
                     double intens = 0.36 * radiusColor.R + 0.53 * radiusColor.G + 0.11 * radiusColor.B;
-                    if (!valColor.Contains(intens))
+                    valIntens.Add(intens);
+                }
+            valIntens.Sort();
+            median = valIntens[valIntens.Count / 2];
+            
+            for(int i = -radiusX; i <= radiusX; i++)
+                for (int j = -radiusY; j <= radiusY; j++)
+                {
+                    int idX = Clamp(x + i, 0, sourceImage.Width - 1);
+                    int idY = Clamp(y + j, 0, sourceImage.Height - 1);
+                    Color radiusColor = sourceImage.GetPixel(idX, idY);
+                    double intens = 0.36 * radiusColor.R + 0.53 * radiusColor.G + 0.11 * radiusColor.B;
+                    if(intens == median)
                     {
-                        map.Add(intens, radiusColor);
-                        valColor.Add(intens);
+                        return radiusColor;
+                        break;
                     }
                 }
-            valColor.Sort();
-            median = valColor[valColor.Count / 2];
-            return map[median];
+            return color;
         }
     }
 }

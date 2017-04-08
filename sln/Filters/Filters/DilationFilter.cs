@@ -7,6 +7,12 @@ namespace Filters
 {
     class DilationFilter : MatMorphology
     {
+        protected DilationFilter() { }
+
+        public DilationFilter(int[,] mask)
+        {
+            this.mask = mask;
+        }
         protected override void ind_mask()
         {
             ind_m = 255;
@@ -22,10 +28,6 @@ namespace Filters
             return false;
         }
 
-        public void ErossionFilter(int[,] mask)
-        {
-            this.mask = mask;
-        }
     }
 
     class DilationMask : DilationFilter
