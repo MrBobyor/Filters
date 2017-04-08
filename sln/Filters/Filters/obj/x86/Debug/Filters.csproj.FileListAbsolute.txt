@@ -5,3 +5,6 @@ F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filter
 F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\bin\Debug\Filters.pdb
 F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\obj\x86\Debug\Filters.exe
 F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\obj\x86\Debug\Filters.pdb
+F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\obj\x86\Debug\Filters.csprojResolveAssemblyReference.cache
+F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\obj\x86\Debug\Filters.Form2.resources
+F:\Inf\sashka einstein\education\C#\lab.works\KG-2017\Filters\sln\Filters\Filters\obj\x86\Debug\Filters.Form3.resources
