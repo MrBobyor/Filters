@@ -13,15 +13,16 @@ namespace Filters
     {
         static public int[,] mask = new int[3,3];
         static public bool marker = false;
-
+        
         public Form3()
         {
             Filters main = this.Owner as Filters;
             InitializeComponent();
-            
+            pictureBox5.BackColor = Color.Violet;
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
                     mask[i, j] = 0;
+            mask[1, 1] = 1;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -49,11 +50,11 @@ namespace Filters
             mask[1, 0] = 1;
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            pictureBox5.BackColor = Color.Violet;
-            mask[1, 1] = 1;
-        }
+        //private void pictureBox5_Click(object sender, EventArgs e)
+        //{
+            //pictureBox5.BackColor = Color.White;
+            //mask[1, 1] = 0;
+        //}
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
