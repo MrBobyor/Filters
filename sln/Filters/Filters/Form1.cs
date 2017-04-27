@@ -234,5 +234,23 @@ namespace Filters
             pictureBox1.Image = result;
             pictureBox1.Refresh();
         }
+
+        private void градиентныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter1 = new DilationMask();
+            Filter filter2 = new ErosionMask();
+
+            oldMap.Push(image);
+            Bitmap result1 = filter1.processImage(image);
+            Bitmap result2 = filter2.processImage(image);
+            Bitmap result = result2;
+            for (int i = 0; i < image.Width; i++)
+                for (int j = 0; j < image.Height; j++)
+                    result.SetPixel(i, j, Color.FromArgb(filter1.Clamp(result2.GetPixel(i, j).R - result1.GetPixel(i, j).R, 0, 255),
+                                                         filter1.Clamp(result2.GetPixel(i, j).G - result1.GetPixel(i, j).G, 0, 255),
+                                                         filter1.Clamp(result2.GetPixel(i, j).B - result1.GetPixel(i, j).B, 0, 255)));
+            pictureBox1.Image = result;
+            pictureBox1.Refresh();
+        }
     }
 }

@@ -62,6 +62,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
+            this.градиентныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -235,7 +236,8 @@
             this.эрозияToolStripMenuItem,
             this.расширениеToolStripMenuItem,
             this.замыканиеToolStripMenuItem,
-            this.размыканиеToolStripMenuItem});
+            this.размыканиеToolStripMenuItem,
+            this.градиентныйToolStripMenuItem});
             this.матМорфологияToolStripMenuItem.Name = "матМорфологияToolStripMenuItem";
             this.матМорфологияToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.матМорфологияToolStripMenuItem.Text = "Мат. морфология";
@@ -341,6 +343,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // градиентныйToolStripMenuItem
+            // 
+            this.градиентныйToolStripMenuItem.Name = "градиентныйToolStripMenuItem";
+            this.градиентныйToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.градиентныйToolStripMenuItem.Text = "Градиентный";
+            this.градиентныйToolStripMenuItem.Click += new System.EventHandler(this.градиентныйToolStripMenuItem_Click);
+            // 
             // Filters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +406,7 @@
         private System.Windows.Forms.ToolStripMenuItem стандартныйЭлементToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem задатьСвойЭлементToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem стандартныйЭлементToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem градиентныйToolStripMenuItem;
     }
 }
 
